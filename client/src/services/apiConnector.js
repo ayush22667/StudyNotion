@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: "https://studynotion-fcvt.onrender.com/api/v1", // ✅ your backend
+    baseURL: "http://localhost:4000/api/v1", // ✅ your backend
     withCredentials: true, // ✅ VERY IMPORTANT for cookie-based auth
 });
 

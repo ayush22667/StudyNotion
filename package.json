@@ -1,0 +1,19 @@
+{
+  "name": "studynotion-fullstack",
+  "version": "1.0.0",
+  "description": "StudyNotion Full Stack Application",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm start --prefix client\"",
+    "start": "concurrently \"npm run start --prefix server\" \"npm start --prefix client\"",
+    "start-dev": "echo \"Starting StudyNotion Full Stack Application...\" && echo \"Frontend will run on http://localhost:3000\" && echo \"Backend will run on http://localhost:4000\" && echo \"\" && npm run dev",
+    "build": "npm run build --prefix client",
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "install-all": "npm install && npm run install-client && npm run install-server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "author": "Ayush Anand",
+  "license": "ISC"
+}

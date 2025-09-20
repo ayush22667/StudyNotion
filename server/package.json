@@ -15,7 +15,7 @@
   "keywords": [
     "studynotion-backend"
   ],
-  "author": "Saikat Mukherjee",
+  "author": "Ayush Anand",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
