@@ -1,5 +1,4 @@
 import React from "react";
-import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
 
 // Images
@@ -25,127 +24,45 @@ const Community = ["Forums", "Chapters", "Events"];
 const Footer = () => {
   return (
     <div className="bg-richblack-800">
-      <div className="flex lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto relative py-14">
-        <div className="border-b w-[100%] flex flex-col lg:flex-row pb-5 border-richblack-700">
-          {/* Section 1 */}
-          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-richblack-700 pl-3 lg:pr-5 gap-3">
-            <div className="w-[30%] flex flex-col gap-3 lg:w-[30%] mb-7 lg:pl-0">
-              <img src={Logo} alt="" className="object-contain" />
-              <h1 className="text-richblack-50 font-semibold text-[16px]">
-                Company
-              </h1>
-              <div className="flex flex-col gap-2">
-                {["About", "Careers", "Affiliates"].map((ele, i) => {
-                  return (
-                    <div
-                      key={i}
-                      className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-                    >
-                      <Link to={ele.toLowerCase()}>{ele}</Link>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="flex gap-3 text-lg">
-                <FaFacebook />
-                <FaGoogle />
-                <FaTwitter />
-                <FaYoutube />
-              </div>
-              <div></div>
-            </div>
+      <div className="flex flex-col lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto py-14">
+        {/* Logo and Company Info */}
+        <div className="flex flex-col items-center lg:items-start gap-4">
+          <img src={Logo} alt="Prince Academy" className="object-contain h-8" />
+          <p className="text-sm text-center lg:text-left">
+            Your gateway to quality education
+          </p>
+          <div className="flex gap-4 text-lg">
+            <FaFacebook className="cursor-pointer hover:text-richblack-50 transition-all duration-200" />
+            <FaGoogle className="cursor-pointer hover:text-richblack-50 transition-all duration-200" />
+            <FaTwitter className="cursor-pointer hover:text-richblack-50 transition-all duration-200" />
+            <FaYoutube className="cursor-pointer hover:text-richblack-50 transition-all duration-200" />
+          </div>
+        </div>
 
-            <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
-              <h1 className="text-richblack-50 font-semibold text-[16px]">
-                Resources
-              </h1>
-
-              <div className="flex flex-col gap-2 mt-2">
-                {Resources.map((ele, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-                    >
-                      <Link to={ele.split(" ").join("-").toLowerCase()}>
-                        {ele}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
-                Support
-              </h1>
-              <div className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200 mt-2">
-                <Link to={"/help-center"}>Help Center</Link>
-              </div>
-            </div>
-
-            <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
-              <h1 className="text-richblack-50 font-semibold text-[16px]">
-                Plans
-              </h1>
-
-              <div className="flex flex-col gap-2 mt-2">
-                {Plans.map((ele, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-                    >
-                      <Link to={ele.split(" ").join("-").toLowerCase()}>
-                        {ele}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-              <h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
-                Community
-              </h1>
-
-              <div className="flex flex-col gap-2 mt-2">
-                {Community.map((ele, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-                    >
-                      <Link to={ele.split(" ").join("-").toLowerCase()}>
-                        {ele}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+        {/* Quick Links */}
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col gap-2">
+            <h3 className="text-richblack-50 font-semibold text-[16px] mb-2">
+              Company
+            </h3>
+            <Link to="/about" className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200">
+              About
+            </Link>
+            <Link to="/contact" className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200">
+              Contact
+            </Link>
           </div>
 
-          {/* Section 2 */}
-          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between pl-3 lg:pl-5 gap-3">
-            {FooterLink2.map((ele, i) => {
-              return (
-                <div key={i} className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
-                  <h1 className="text-richblack-50 font-semibold text-[16px]">
-                    {ele.title}
-                  </h1>
-                  <div className="flex flex-col gap-2 mt-2">
-                    {ele.links.map((link, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-                        >
-                          <Link to={link.link}>{link.title}</Link>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-richblack-50 font-semibold text-[16px] mb-2">
+              Support
+            </h3>
+            <Link to="/help" className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200">
+              Help Center
+            </Link>
+            <Link to="/privacy" className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200">
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </div>
@@ -172,7 +89,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="text-center">Made with ❤️ Ayush Saha © 2023 Studynotion</div>
+          <div className="text-center">© 2023 Prince Academy. All rights reserved.</div>
         </div>
       </div>
     </div>

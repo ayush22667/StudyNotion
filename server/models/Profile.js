@@ -16,6 +16,26 @@ const profileSchema = new mongoose.Schema({
 		type: Number,
 		trim: true,
 	},
+	mobileNo: {
+		type: String,
+		trim: true,
+	},
+	villageCity: {
+		type: String,
+		trim: true,
+	},
+	fatherName: {
+		type: String,
+		trim: true,
+	},
+	fatherMobileNo: {
+		type: String,
+		trim: true,
+	},
+	collegeName: {
+		type: String,
+		trim: true,
+	},
 });
 
 // Export the Profile model

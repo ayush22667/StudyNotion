@@ -2,10 +2,10 @@
   "engines": {
     "node": "v20.10.0"
   },
-  "name": "studynotion-backend",
+  "name": "prince-academy-backend",
   "version": "1.0.0",
   "type": "commonjs",
-  "description": "studynotion-backend",
+  "description": "prince-academy-backend",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server/index.js",
@@ -13,7 +13,7 @@
     "start": "nodemon server/index.js"
   },
   "keywords": [
-    "studynotion-backend"
+    "prince-academy-backend"
   ],
   "author": "Ayush Anand",
   "license": "ISC",

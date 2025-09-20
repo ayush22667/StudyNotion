@@ -22,6 +22,11 @@ exports.signup = async (req, res) => {
       accountType,
       contactNumber,
       otp,
+      mobileNo,
+      villageCity,
+      fatherName,
+      fatherMobileNo,
+      collegeName,
     } = req.body
     // Check if All Details are there or not
     if (
@@ -84,7 +89,12 @@ exports.signup = async (req, res) => {
       gender: null,
       dateOfBirth: null,
       about: null,
-      contactNumber: null,
+      contactNumber: contactNumber,
+      mobileNo: mobileNo,
+      villageCity: villageCity,
+      fatherName: fatherName,
+      fatherMobileNo: fatherMobileNo,
+      collegeName: collegeName,
     })
     const user = await User.create({
       firstName,

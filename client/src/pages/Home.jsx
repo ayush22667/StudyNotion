@@ -33,14 +33,14 @@ function Home() {
         {/* Heading */}
         <div className="text-center text-4xl font-semibold">
           Empower Your Future with
-          <HighlightText text={"Coding Skills"} />
+          <HighlightText text={"Quality Education"} />
         </div>
 
         {/* Sub Heading */}
         <div className="-mt-3 w-[90%] text-center text-lg font-bold text-richblack-300">
-          With our online coding courses, you can learn at your own pace, from
+          With our comprehensive English and EVS courses, you can learn at your own pace, from
           anywhere in the world, and get access to a wealth of resources,
-          including hands-on projects, quizzes, and personalized feedback from
+          including interactive lessons, quizzes, and personalized feedback from
           instructors.
         </div>
 
@@ -66,22 +66,22 @@ function Home() {
           </video>
         </div>
 
-        {/* Code Section 1  */}
+        {/* English Section */}
         <div>
           <CodeBlocks
             position={"lg:flex-row"}
             heading={
               <div className="text-4xl font-semibold">
-                Unlock your
-                <HighlightText text={"coding potential"} /> with our online
+                Master
+                <HighlightText text={"English Language"} /> with our comprehensive
                 courses.
               </div>
             }
             subheading={
-              "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
+              "Our English courses are designed and taught by experienced educators who are passionate about helping you improve your grammar, vocabulary, and communication skills."
             }
             ctabtn1={{
-              btnText: "Try it Yourself",
+              btnText: "Start Learning",
               link: "/signup",
               active: true,
             }}
@@ -91,26 +91,26 @@ function Home() {
               active: false,
             }}
             codeColor={"text-yellow-25"}
-            codeblock={`<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
+            codeblock={`"The quick brown fox jumps over the lazy dog."\n\nGrammar Rules:\n• Subject + Verb + Object\n• Use articles: a, an, the\n• Adjectives describe nouns\n• Adverbs modify verbs\n\nVocabulary Building:\n• Read daily\n• Learn new words\n• Practice speaking`}
             backgroundGradient={<div className="codeblock1 absolute"></div>}
           />
         </div>
 
-        {/* Code Section 2 */}
+        {/* EVS Section */}
         <div>
           <CodeBlocks
             position={"lg:flex-row-reverse"}
             heading={
               <div className="w-[100%] text-4xl font-semibold lg:w-[50%]">
-                Start
-                <HighlightText text={"coding in seconds"} />
+                Explore
+                <HighlightText text={"Environmental Studies"} />
               </div>
             }
             subheading={
-              "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
+              "Discover the world around you with our interactive EVS lessons. Learn about nature, conservation, and sustainable living through engaging activities."
             }
             ctabtn1={{
-              btnText: "Continue Lesson",
+              btnText: "Start Exploring",
               link: "/signup",
               active: true,
             }}
@@ -120,7 +120,7 @@ function Home() {
               active: false,
             }}
             codeColor={"text-white"}
-            codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
+            codeblock={`Environment = Living + Non-living\n\nLiving Things:\n• Plants (Trees, Flowers)\n• Animals (Birds, Mammals)\n• Humans\n\nNon-living Things:\n• Air, Water, Soil\n• Rocks, Mountains\n\nConservation Tips:\n• Save water\n• Plant trees\n• Reduce pollution`}
             backgroundGradient={<div className="codeblock2 absolute"></div>}
           />
         </div>
@@ -158,7 +158,7 @@ function Home() {
             </div>
             <div className="flex flex-col items-start gap-10 lg:w-[40%]">
               <div className="text-[16px]">
-                The modern StudyNotion is the dictates its own terms. Today, to
+                The modern Prince Academy dictates its own terms. Today, to
                 be a competitive specialist requires more than professional
                 skills.
               </div>

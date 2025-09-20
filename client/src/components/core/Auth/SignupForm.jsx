@@ -22,12 +22,17 @@ function SignupForm() {
     email: "",
     password: "",
     confirmPassword: "",
+    mobileNo: "",
+    villageCity: "",
+    fatherName: "",
+    fatherMobileNo: "",
+    collegeName: "",
   })
 
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-  const { firstName, lastName, email, password, confirmPassword } = formData
+  const { firstName, lastName, email, password, confirmPassword, mobileNo, villageCity, fatherName, fatherMobileNo, collegeName } = formData
 
   // Handle input fields, when some value changes
   const handleOnChange = (e) => {
@@ -63,6 +68,11 @@ function SignupForm() {
       email: "",
       password: "",
       confirmPassword: "",
+      mobileNo: "",
+      villageCity: "",
+      fatherName: "",
+      fatherMobileNo: "",
+      collegeName: "",
     })
     setAccountType(ACCOUNT_TYPE.STUDENT)
   }
@@ -131,6 +141,87 @@ function SignupForm() {
             className="form-style w-full"
           />
         </label>
+        
+        {/* Mobile Number and Village/City */}
+        <div className="flex gap-x-4">
+          <label>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              Mobile No <sup className="text-pink-200">*</sup>
+            </p>
+            <input
+              required
+              type="tel"
+              name="mobileNo"
+              value={mobileNo}
+              onChange={handleOnChange}
+              placeholder="Enter mobile number"
+              className="form-style w-full"
+            />
+          </label>
+          <label>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              Village/City <sup className="text-pink-200">*</sup>
+            </p>
+            <input
+              required
+              type="text"
+              name="villageCity"
+              value={villageCity}
+              onChange={handleOnChange}
+              placeholder="Enter village/city"
+              className="form-style w-full"
+            />
+          </label>
+        </div>
+
+        {/* Father's Name and Father's Mobile */}
+        <div className="flex gap-x-4">
+          <label>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              Father's Name <sup className="text-pink-200">*</sup>
+            </p>
+            <input
+              required
+              type="text"
+              name="fatherName"
+              value={fatherName}
+              onChange={handleOnChange}
+              placeholder="Enter father's name"
+              className="form-style w-full"
+            />
+          </label>
+          <label>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+              Father's Mobile No <sup className="text-pink-200">*</sup>
+            </p>
+            <input
+              required
+              type="tel"
+              name="fatherMobileNo"
+              value={fatherMobileNo}
+              onChange={handleOnChange}
+              placeholder="Enter father's mobile"
+              className="form-style w-full"
+            />
+          </label>
+        </div>
+
+        {/* College Name */}
+        <label className="w-full">
+          <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+            College Name <sup className="text-pink-200">*</sup>
+          </p>
+          <input
+            required
+            type="text"
+            name="collegeName"
+            value={collegeName}
+            onChange={handleOnChange}
+            placeholder="Enter college name"
+            className="form-style w-full"
+          />
+        </label>
+
         <div className="flex gap-x-4">
           <label className="relative">
             <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
