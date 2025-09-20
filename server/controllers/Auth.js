@@ -1,4 +1,4 @@
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcrypt")
 const User = require("../models/User")
 const OTP = require("../models/OTP")
 const jwt = require("jsonwebtoken")
@@ -117,7 +117,7 @@ exports.login = async (req, res) => {
   try {
     // Get email and password from request body
     const { email, password } = req.body
-
+      console.log("Login request body:", req.body);
     // Check if email or password is missing
     if (!email || !password) {
       // Return 400 Bad Request status code with error message
@@ -142,13 +142,13 @@ exports.login = async (req, res) => {
     // Generate JWT token and Compare Password
     if (await bcrypt.compare(password, user.password)) {
       const token = jwt.sign(
-        { email: user.email, id: user._id, role: user.role },
+        { email: user.email, id: user._id, accountType:user.accountType }, //role: user.role
         process.env.JWT_SECRET,
         {
           expiresIn: "24h",
         }
       )
-
+       
       // Save token to user document in database
       user.token = token
       user.password = undefined
