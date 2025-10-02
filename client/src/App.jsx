@@ -18,6 +18,8 @@ import MyCourses from "./components/core/Dashboard/MyCourses";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import Settings from "./components/core/Dashboard/Settings";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
+import QuizManagementPage from "./pages/QuizManagement";
+import NotesManagementPage from "./pages/NotesManagement";
 import About from "./pages/About";
 import Catalog from "./pages/Catalog";
 import Contact from "./pages/Contact";
@@ -119,6 +121,8 @@ function App() {
                 path="dashboard/edit-course/:courseId"
                 element={<EditCourse />}
               />
+              <Route path="dashboard/quiz-management" element={<QuizManagementPage />} />
+              <Route path="dashboard/notes-management" element={<NotesManagementPage />} />
             </>
           )}
           {/* Route only for Students */}

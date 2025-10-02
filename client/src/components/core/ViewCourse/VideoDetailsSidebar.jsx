@@ -5,13 +5,16 @@ import { useSelector } from "react-redux"
 import { useLocation, useNavigate, useParams } from "react-router-dom"
 
 import IconBtn from "../../Common/IconBtn"
+import StudentQuiz from "./StudentQuiz"
+import StudentNotes from "./StudentNotes"
 
 export default function VideoDetailsSidebar({ setReviewModal }) {
   const [activeStatus, setActiveStatus] = useState("")
   const [videoBarActive, setVideoBarActive] = useState("")
+  const [activeTab, setActiveTab] = useState("lectures") // lectures, quiz, notes
   const navigate = useNavigate()
   const location = useLocation()
-  const { sectionId, subSectionId } = useParams()
+  const { sectionId, subSectionId, courseId } = useParams()
   const {
     courseSectionData,
     courseEntireData,
@@ -66,64 +69,111 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
           </div>
         </div>
 
-        <div className="h-[calc(100vh - 5rem)] overflow-y-auto">
-          {courseSectionData.map((course, index) => (
-            <div
-              className="mt-2 cursor-pointer text-sm text-richblack-5"
-              onClick={() => setActiveStatus(course?._id)}
-              key={index}
-            >
-              {/* Section */}
-              <div className="flex flex-row justify-between bg-richblack-600 px-5 py-4">
-                <div className="w-[70%] font-semibold">
-                  {course?.sectionName}
-                </div>
-                <div className="flex items-center gap-3">
-                  {/* <span className="text-[12px] font-medium">
-                    Lession {course?.subSection.length}
-                  </span> */}
-                  <span
-                    className={`${
-                      activeStatus === course?.sectionName
-                        ? "rotate-0"
-                        : "rotate-180"
-                    } transition-all duration-500`}
-                  >
-                    <BsChevronDown />
-                  </span>
-                </div>
-              </div>
+        {/* Tab Navigation */}
+        <div className="flex border-b border-richblack-600">
+          <button
+            onClick={() => setActiveTab("lectures")}
+            className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${
+              activeTab === "lectures"
+                ? "bg-yellow-50 text-richblack-900"
+                : "text-richblack-300 hover:text-white"
+            }`}
+          >
+            Lectures
+          </button>
+          <button
+            onClick={() => setActiveTab("quiz")}
+            className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${
+              activeTab === "quiz"
+                ? "bg-yellow-50 text-richblack-900"
+                : "text-richblack-300 hover:text-white"
+            }`}
+          >
+            Quiz
+          </button>
+          <button
+            onClick={() => setActiveTab("notes")}
+            className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${
+              activeTab === "notes"
+                ? "bg-yellow-50 text-richblack-900"
+                : "text-richblack-300 hover:text-white"
+            }`}
+          >
+            Notes
+          </button>
+        </div>
 
-              {/* Sub Sections */}
-              {activeStatus === course?._id && (
-                <div className="transition-[height] duration-500 ease-in-out">
-                  {course.subSection.map((topic, i) => (
-                    <div
-                      className={`flex gap-3  px-5 py-2 ${
-                        videoBarActive === topic._id
-                          ? "bg-yellow-200 font-semibold text-richblack-800"
-                          : "hover:bg-richblack-900"
-                      } `}
-                      key={i}
-                      onClick={() => {
-                        navigate(
-                          `/view-course/${courseEntireData?._id}/section/${course?._id}/sub-section/${topic?._id}`
-                        )
-                        setVideoBarActive(topic._id)
-                      }}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={completedLectures.includes(topic?._id)}
-                        onChange={() => {}}
-                      />
-                      {topic.title}
+        <div className="h-[calc(100vh - 5rem)] overflow-y-auto">
+          {activeTab === "lectures" && (
+            <>
+              {courseSectionData.map((course, index) => (
+                <div
+                  className="mt-2 cursor-pointer text-sm text-richblack-5"
+                  onClick={() => setActiveStatus(course?._id)}
+                  key={index}
+                >
+                  {/* Section */}
+                  <div className="flex flex-row justify-between bg-richblack-600 px-5 py-4">
+                    <div className="w-[70%] font-semibold">
+                      {course?.sectionName}
                     </div>
-                  ))}
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`${
+                          activeStatus === course?.sectionName
+                            ? "rotate-0"
+                            : "rotate-180"
+                        } transition-all duration-500`}
+                      >
+                        <BsChevronDown />
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Sub Sections */}
+                  {activeStatus === course?._id && (
+                    <div className="transition-[height] duration-500 ease-in-out">
+                      {course.subSection.map((topic, i) => (
+                        <div
+                          className={`flex gap-3  px-5 py-2 ${
+                            videoBarActive === topic._id
+                              ? "bg-yellow-200 font-semibold text-richblack-800"
+                              : "hover:bg-richblack-900"
+                          } `}
+                          key={i}
+                          onClick={() => {
+                            navigate(
+                              `/view-course/${courseEntireData?._id}/section/${course?._id}/sub-section/${topic?._id}`
+                            )
+                            setVideoBarActive(topic._id)
+                          }}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={completedLectures.includes(topic?._id)}
+                            onChange={() => {}}
+                          />
+                          {topic.title}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
+              ))}
+            </>
+          )}
+
+          {activeTab === "quiz" && (
+            <div className="p-4">
+              <StudentQuiz />
             </div>
-          ))}
+          )}
+
+          {activeTab === "notes" && (
+            <div className="p-4">
+              <StudentNotes />
+            </div>
+          )}
         </div>
       </div>
     </>
