@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
-import { apiConnector } from "../services/apiconnector";
+import { apiConnector } from "../services/apiConnector";
 import { courseEndpoints } from "../services/apis";
 import QuizManagement from "../components/core/Dashboard/QuizManagement/QuizManagement";
 

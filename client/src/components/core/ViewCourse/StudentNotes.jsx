@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
-import { apiConnector } from "../../../services/apiconnector";
+import { apiConnector } from "../../../services/apiConnector";
 import { notesEndpoints } from "../../../services/apis";
 
 function StudentNotes() {

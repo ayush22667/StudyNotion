@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
-import { apiConnector } from "../../../../services/apiconnector";
+import { apiConnector } from "../../../../services/apiConnector";
 import { quizEndpoints } from "../../../../services/apis";
 
 function CreateQuizModal({ courseId, onClose, onSuccess }) {
