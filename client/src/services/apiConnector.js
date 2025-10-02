@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: "http://localhost:4000/api/v1", // ✅ your backend
+    baseURL: process.env.REACT_APP_BASE_URL, // ✅ your backend
     withCredentials: true, // ✅ VERY IMPORTANT for cookie-based auth
 });
 
