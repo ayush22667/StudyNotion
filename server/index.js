@@ -3,8 +3,8 @@
 const express = require("express");
 const app = express();
 // Example if your files are lower-case:
-const userRoutes    = require("./routes/user.js");
-const profileRoutes = require("./routes/profile.js");
+const userRoutes    = require("./routes/User.js");
+const profileRoutes = require("./routes/Profile.js");
 const courseRoutes  = require("./routes/Course.js");
 const paymentRoutes = require("./routes/Payments.js");
 const contactUsRoute= require("./routes/Contact.js");
