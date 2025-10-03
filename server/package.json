@@ -8,9 +8,9 @@
   "description": "prince-academy-backend",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/index.js",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "nodemon server/index.js"
+    "dev": "nodemon index.js",
+    "build": "npm install && npm install --prefix ../client && npm run build --prefix ../client",
+    "start": "nodemon index.js"
   },
   "keywords": [
     "prince-academy-backend"
