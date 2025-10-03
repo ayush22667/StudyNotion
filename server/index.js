@@ -43,6 +43,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:3000",
   "https://studynotion-backend-z2um.onrender.com",
+  "https://studynotion-3-aljb.onrender.com",
 ]
 
 app.use(
