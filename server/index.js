@@ -42,8 +42,7 @@ app.use(cookieParser());
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://study-notion-frontend-beige-delta.vercel.app",
-  "https://study-notion-frontend-ayush-sahas-projects-7fac14ec.vercel.app", // ⬅️ add this
+  "https://studynotion-backend-z2um.onrender.com",
 ]
 
 app.use(
